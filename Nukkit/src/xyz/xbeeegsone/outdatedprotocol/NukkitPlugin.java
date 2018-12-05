@@ -5,6 +5,7 @@ import cn.nukkit.network.protocol.ProtocolInfo;
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.TextFormat;
 import xyz.xbeeegsone.outdatedprotocol.listeners.PacketHandler;
+import xyz.xbeeegsone.outdatedprotocol.listeners.QuitListener;
 import xyz.xbeeegsone.outdatedprotocol.network.ContainerSetSlotPacket;
 import xyz.xbeeegsone.outdatedprotocol.network.ExtraLoginPacket;
 
@@ -19,18 +20,15 @@ public class NukkitPlugin extends PluginBase {
     @Override
     public void onLoad() {
         this.getServer().getLogger().warning("Enabling outdated protocol support...");
-        super.onLoad();
     }
 
     @Override
     public void onEnable() {
-        super.onEnable();
         plugin = this;
         this.registerPackets();
-        this.getServer().getPluginManager().registerEvents(new PacketHandler(), this);
-        this.getServer().setPropertyBoolean("xbox-auth", false);
+        this.getServer().getNetwork().setName(this.getServer().getNetwork().getName() + " v.1.0.x");
+        setServerSettings();
         PluginInfo();
-        this.getServer().getLogger().setLogDebug(true);
     }
 
     public void PluginInfo() {
@@ -42,6 +40,16 @@ public class NukkitPlugin extends PluginBase {
     public void registerPackets() {
         this.getServer().getNetwork().registerPacket(ProtocolInfo.LOGIN_PACKET, ExtraLoginPacket.class); //fixed 0x01 or LoginPacket
         this.getServer().getNetwork().registerPacket(ProtocolInfo.INVENTORY_SLOT_PACKET, ContainerSetSlotPacket.class);
+    }
+
+    public void registerListeners() {
+        this.getServer().getPluginManager().registerEvents(new PacketHandler(), this);
+        this.getServer().getPluginManager().registerEvents(new QuitListener(), this);
+    }
+
+    public void setServerSettings() {
+        this.getServer().setPropertyBoolean("xbox-auth", false);
+        this.getServer().getLogger().setLogDebug(true);
     }
 
     public static NukkitPlugin getPlugin(){
