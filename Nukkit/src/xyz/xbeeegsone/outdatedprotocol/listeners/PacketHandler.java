@@ -7,6 +7,7 @@ import cn.nukkit.event.Listener;
 import cn.nukkit.event.server.DataPacketReceiveEvent;
 import cn.nukkit.event.server.DataPacketSendEvent;
 import cn.nukkit.network.protocol.*;
+import cn.nukkit.utils.TextFormat;
 import xyz.xbeeegsone.outdatedprotocol.event.OutdatedPlayerLoginEvent;
 import xyz.xbeeegsone.outdatedprotocol.network.ExtraLoginPacket;
 
@@ -20,8 +21,12 @@ public class PacketHandler implements Listener {
             case ExtraLoginPacket.NETWORK_ID:
                 ExtraLoginPacket extraLoginPacket = (ExtraLoginPacket) dataPacket;
                 if(extraLoginPacket.protocol < ProtocolInfo.CURRENT_PROTOCOL) {
-                    Server.getInstance().getLogger().warning("debug");
-                    Server.getInstance().getPluginManager().callEvent(new OutdatedPlayerLoginEvent(player));
+                    OutdatedPlayerLoginEvent outdatedPlayerLoginEvent = new OutdatedPlayerLoginEvent(player);
+                    Server.getInstance().getPluginManager().callEvent(outdatedPlayerLoginEvent);
+                    if(outdatedPlayerLoginEvent.isCancelled()) {
+                        String info = extraLoginPacket.username + " [Protocol: " + extraLoginPacket.protocol + ", ClientID: " + extraLoginPacket.clientId + ", ClientUUID: " + extraLoginPacket.clientUUID + "]";
+                        Server.getInstance().getLogger().error("Something is going wrong... " + TextFormat.WHITE + info);
+                    }
                 }
         }
     }
