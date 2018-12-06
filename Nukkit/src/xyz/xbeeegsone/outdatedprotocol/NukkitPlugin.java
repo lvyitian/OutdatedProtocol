@@ -8,6 +8,7 @@ import xyz.xbeeegsone.outdatedprotocol.listeners.PacketHandler;
 import xyz.xbeeegsone.outdatedprotocol.listeners.QuitListener;
 import xyz.xbeeegsone.outdatedprotocol.network.ContainerSetSlotPacket;
 import xyz.xbeeegsone.outdatedprotocol.network.ExtraLoginPacket;
+import xyz.xbeeegsone.outdatedprotocol.network.TextPacket;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,7 @@ public class NukkitPlugin extends PluginBase {
     public void registerPackets() {
         this.getServer().getNetwork().registerPacket(ProtocolInfo.LOGIN_PACKET, ExtraLoginPacket.class); //fixed 0x01 or LoginPacket
         this.getServer().getNetwork().registerPacket(ProtocolInfo.INVENTORY_SLOT_PACKET, ContainerSetSlotPacket.class);
+        this.getServer().getNetwork().registerPacket(ProtocolInfo.TEXT_PACKET, TextPacket.class);
     }
 
     public void registerListeners() {

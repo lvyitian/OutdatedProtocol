@@ -40,6 +40,10 @@ public class ContainerSetSlotPacket extends InventorySlotPacket {
         this.putVarInt(this.hotbarSlot);
         this.putSlot(this.item);
         this.putByte((byte) this.selectedSlot);
+
+        super.inventoryId = this.windowid;
+        super.slot = this.slot;
+        super.item = this.item;
     }
 
 }
