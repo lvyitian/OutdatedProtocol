@@ -2,15 +2,16 @@ package xyz.xbeeegsone.outdatedprotocol.player;
 
 import com.nukkitx.protocol.bedrock.BedrockPacket;
 import com.nukkitx.protocol.bedrock.BedrockServerSession;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
 import org.itxtech.nemisys.Player;
+import org.itxtech.nemisys.Server;
 import org.itxtech.nemisys.network.SourceInterface;
 import org.itxtech.nemisys.network.protocol.mcpe.DataPacket;
+import xyz.xbeeegsone.outdatedprotocol.network.NetworkPacketFactory;
 
 public class MVInterfaz implements SourceInterface {
 
     private BedrockServerSession session;
+    private NetworkPacketFactory factory = new NetworkPacketFactory();
 
     public MVInterfaz(BedrockServerSession session) {
         this.session = session;
@@ -28,10 +29,12 @@ public class MVInterfaz implements SourceInterface {
 
     @Override
     public Integer putPacket(Player player, DataPacket dataPacket, boolean b, boolean b1) {
-        //ByteBuf buf = Unpooled.copiedBuffer(dataPacket.getBuffer());
-        //BedrockPacket pk = this.session.getPacketCodec().tryDecode(buf);
-
-        //this.session.sendPacket(pk);
+        BedrockPacket packet = this.factory.translate(dataPacket);
+        if(packet != null) {
+            this.session.sendPacket(packet);
+        } else {
+            Server.getInstance().getLogger().alert("unknown packet with pid <" + dataPacket.pid() + ">");
+        }
         return 0;
     }
 

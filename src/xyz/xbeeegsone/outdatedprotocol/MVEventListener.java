@@ -5,7 +5,7 @@ import com.nukkitx.protocol.bedrock.BedrockServerEventHandler;
 import com.nukkitx.protocol.bedrock.BedrockServerSession;
 import com.nukkitx.protocol.bedrock.v361.Bedrock_v361;
 import org.itxtech.nemisys.Server;
-import xyz.xbeeegsone.outdatedprotocol.network.LoginSession;
+import xyz.xbeeegsone.outdatedprotocol.network.session.LoginSession;
 
 import java.net.InetSocketAddress;
 

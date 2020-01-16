@@ -2,20 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abd491fb-de6b-4f16-9b29-edb532989078" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/OutdatedProtocol_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/OutdatedProtocol_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/network/NetworkPacketFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OutdatedProtocol_jar/OutdatedProtocol.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OutdatedProtocol_jar/OutdatedProtocol.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/MVEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/MVEventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/multiversion/ProtocolGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/multiversion/ProtocolGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/network/LoginSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/network/LoginSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/network/GameSessionPacketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/network/session/GameSessionPacketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/network/LoginSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/network/session/LoginSession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/player/MVInterfaz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/player/MVInterfaz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/player/OutdatedPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/player/OutdatedPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/MVEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/MVEventListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/multiversion/ProtocolGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/multiversion/ProtocolGroup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/network/LoginSession$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/network/LoginSession$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/network/LoginSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/network/LoginSession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/network/GameSessionPacketHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/network/LoginSession$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/network/LoginSession.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/player/MVInterfaz.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/player/MVInterfaz.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/player/OutdatedPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/player/OutdatedPlayer.class" afterDir="false" />
     </list>
