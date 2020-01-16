@@ -6,7 +6,7 @@ import com.nukkitx.protocol.bedrock.v388.Bedrock_v388;
 import com.nukkitx.protocol.bedrock.v389.Bedrock_v389;
 
 public enum ProtocolGroup {
-    UNKNOWN(0, 0, Bedrock_v389.V389_CODEC),
+    UNKNOWN(0, 0, Bedrock_v388.V388_CODEC),
     PROTOCOL_1_12(361, 369, Bedrock_v361.V361_CODEC),
     PROTOCOL_1_13(388, 388, Bedrock_v388.V388_CODEC),
     PROTOCOL_1_14(389, 389, Bedrock_v389.V389_CODEC);

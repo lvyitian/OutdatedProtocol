@@ -28,10 +28,10 @@ public class MVInterfaz implements SourceInterface {
 
     @Override
     public Integer putPacket(Player player, DataPacket dataPacket, boolean b, boolean b1) {
-        ByteBuf buf = Unpooled.copiedBuffer(dataPacket.getBuffer());
-        BedrockPacket pk = this.session.getPacketCodec().tryDecode(buf);
+        //ByteBuf buf = Unpooled.copiedBuffer(dataPacket.getBuffer());
+        //BedrockPacket pk = this.session.getPacketCodec().tryDecode(buf);
 
-        this.session.sendPacket(pk);
+        //this.session.sendPacket(pk);
         return 0;
     }
 

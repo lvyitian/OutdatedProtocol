@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="abd491fb-de6b-4f16-9b29-edb532989078" name="Default Changelist" comment="" />
+    <list default="true" id="abd491fb-de6b-4f16-9b29-edb532989078" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/OutdatedProtocol_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/OutdatedProtocol_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OutdatedProtocol_jar/OutdatedProtocol.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OutdatedProtocol_jar/OutdatedProtocol.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/MVEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/MVEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/multiversion/ProtocolGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/multiversion/ProtocolGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/network/LoginSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/network/LoginSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/player/MVInterfaz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/player/MVInterfaz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/player/OutdatedPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/xbeeegsone/outdatedprotocol/player/OutdatedPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/MVEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/MVEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/multiversion/ProtocolGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/multiversion/ProtocolGroup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/network/LoginSession$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/network/LoginSession$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/network/LoginSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/network/LoginSession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/player/MVInterfaz.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/player/MVInterfaz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/player/OutdatedPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/xyz/xbeeegsone/outdatedprotocol/player/OutdatedPlayer.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,12 +36,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Q4IX2bU4O1HhbgT7uKMIYUtpsJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -33,15 +54,16 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Сервера\OutdatedProtocol\platform\Nemisys" />
-      <recent name="D:\Сервера\OutdatedProtocol\src\xyz\xbeeegsone\outdatedprotocol" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="xyz.xbeeegsone.outdatedprotocol.player" />
+      <recent name="xyz.xbeeegsone.outdatedprotocol" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="xyz.xbeeegsone.outdatedprotocol.multiversion" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="xyz.xbeeegsone.outdatedprotocol" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Сервера\OutdatedProtocol\platform\Nemisys" />
+      <recent name="D:\Сервера\OutdatedProtocol\src\xyz\xbeeegsone\outdatedprotocol" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -68,5 +90,16 @@
       <updated>1567023477020</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

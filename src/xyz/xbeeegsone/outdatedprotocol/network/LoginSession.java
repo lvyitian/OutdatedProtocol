@@ -8,15 +8,15 @@ import com.google.gson.reflect.TypeToken;
 import com.nukkitx.protocol.bedrock.BedrockServerSession;
 import com.nukkitx.protocol.bedrock.handler.BedrockPacketHandler;
 import com.nukkitx.protocol.bedrock.packet.LoginPacket;
-import com.nukkitx.protocol.bedrock.packet.TickSyncPacket;
 import com.nukkitx.protocol.bedrock.v389.Bedrock_v389;
 import org.itxtech.nemisys.Player;
 import org.itxtech.nemisys.Server;
 import org.itxtech.nemisys.event.player.PlayerCreationEvent;
-import org.itxtech.nemisys.scheduler.AsyncTask;
+import org.itxtech.nemisys.network.SourceInterface;
 import org.itxtech.nemisys.utils.SerializedImage;
 import org.itxtech.nemisys.utils.Skin;
 import org.itxtech.nemisys.utils.SkinAnimation;
+import org.itxtech.nemisys.utils.TextFormat;
 import xyz.xbeeegsone.outdatedprotocol.multiversion.ProtocolGroup;
 import xyz.xbeeegsone.outdatedprotocol.player.MVInterfaz;
 import xyz.xbeeegsone.outdatedprotocol.player.OutdatedPlayer;
@@ -37,8 +37,7 @@ public class LoginSession implements BedrockPacketHandler {
     private long clientId;
     private Skin skin;
 
-    private AsyncTask loginTask;
-    private byte[] cachedLoginPacket = new byte[]{};
+    private LoginPacket cachedLoginPacket = new LoginPacket();
     private UUID clientUUID;
     private ProtocolGroup protocolGroup;
 
@@ -48,14 +47,14 @@ public class LoginSession implements BedrockPacketHandler {
 
     @Override
     public boolean handle(LoginPacket packet) {
-        Server.getInstance().getLogger().info("protocol: " + packet.getProtocolVersion());
         this.protocolGroup = ProtocolGroup.from(packet.getProtocolVersion());
         this.session.setPacketCodec(this.protocolGroup.getCodec());
+
         this.decodeChainData(packet);
         this.decodeSkinData(packet);
 
-        //this.cachedLoginPacket = Bedrock_v389.V389_CODEC.tryEncode(packet).array();
-        //this.createPlayer(this.session);
+        this.cachedLoginPacket = packet;
+        this.createPlayer(this.session);
         return true;
     }
 
@@ -148,10 +147,6 @@ public class LoginSession implements BedrockPacketHandler {
         return new Gson().fromJson(new String(Base64.getDecoder().decode(base[1].replaceAll("-", "+").replaceAll("_", "/")), StandardCharsets.UTF_8), JsonObject.class);
     }
 
-    public Skin getSkin() {
-        return this.skin;
-    }
-
     private void createPlayer(BedrockServerSession session) {
         MVInterfaz interfaz = new MVInterfaz(session);
         PlayerCreationEvent event = new PlayerCreationEvent(interfaz, OutdatedPlayer.class, OutdatedPlayer.class, this.clientId, session.getAddress().getHostString(), session.getAddress().getPort());
@@ -159,16 +154,18 @@ public class LoginSession implements BedrockPacketHandler {
 
         Class<? extends Player> clazz = event.getPlayerClass();
         try {
-            Constructor constructor = clazz.getConstructor(MVInterfaz.class, Long.class, String.class, int.class, String.class, UUID.class, Skin.class, byte[].class, ProtocolGroup.class);
-            OutdatedPlayer player = (OutdatedPlayer) constructor.newInstance(interfaz, this.clientId, event.getAddress(), event.getPort(), this.username, this.clientUUID, this.skin, this.cachedLoginPacket, this.protocolGroup);
+            Constructor constructor = clazz.getConstructor(SourceInterface.class, long.class, String.class, int.class);
+            OutdatedPlayer player = (OutdatedPlayer) constructor.newInstance(interfaz, this.clientId, event.getAddress(), event.getPort());
+            player.init(this.username, this.skin, this.clientUUID, this.cachedLoginPacket);
 
             Server.getInstance().addPlayer(UUID.randomUUID().toString(), player);
+            Server.getInstance().getLogger().info(Server.getInstance().getLanguage().translateString("nemisys.player.logIn", new String[]{TextFormat.AQUA + this.username + TextFormat.WHITE, this.session.getAddress().getHostString(), String.valueOf(this.session.getAddress().getPort()), "" + TextFormat.GREEN + this.clientId + TextFormat.WHITE}));
 
             session.setPacketHandler(new GameSessionPacketHandler());
-            //session.setBatchedHandler(new MVBatchHandler());
+            session.setBatchedHandler(new MVBatchHandler());
             session.addDisconnectHandler((reason) -> {
                 Server.getInstance().removePlayer(player);
-                Server.getInstance().getLogger().info("Disconnected " + session.getAddress().getHostString() + ":" + session.getAddress().getPort());
+                Server.getInstance().getLogger().info(Server.getInstance().getLanguage().translateString("nemisys.player.logOut", new String[]{TextFormat.AQUA + this.username + TextFormat.WHITE, this.session.getAddress().getHostString(), String.valueOf(this.session.getAddress().getPort()), String.valueOf(reason)}));
             });
         } catch (NoSuchMethodException | InvocationTargetException | InstantiationException | IllegalAccessException e) {
             Server.getInstance().getLogger().logException(e);

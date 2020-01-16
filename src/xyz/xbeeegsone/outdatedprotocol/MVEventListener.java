@@ -38,9 +38,6 @@ public class MVEventListener implements BedrockServerEventHandler {
 
     @Override
     public void onSessionCreation(BedrockServerSession session) {
-        InetSocketAddress addr = session.getAddress();
-        Server.getInstance().getLogger().info("Session created for " + addr.getHostString() + ":" + addr.getPort());
-
         session.setPacketHandler(new LoginSession(session));
     }
 }
