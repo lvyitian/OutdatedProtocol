@@ -9,6 +9,7 @@ import com.nukkitx.protocol.bedrock.BedrockServerSession;
 import com.nukkitx.protocol.bedrock.handler.BedrockPacketHandler;
 import com.nukkitx.protocol.bedrock.packet.LoginPacket;
 import com.nukkitx.protocol.bedrock.v389.Bedrock_v389;
+import io.netty.buffer.ByteBuf;
 import org.itxtech.nemisys.Player;
 import org.itxtech.nemisys.Server;
 import org.itxtech.nemisys.event.player.PlayerCreationEvent;
@@ -38,7 +39,7 @@ public class LoginSession implements BedrockPacketHandler {
     private long clientId;
     private Skin skin;
 
-    private LoginPacket cachedLoginPacket = new LoginPacket();
+    private byte[] cachedLoginPacket;
     private UUID clientUUID;
     private ProtocolGroup protocolGroup;
 
@@ -54,7 +55,10 @@ public class LoginSession implements BedrockPacketHandler {
         this.decodeChainData(packet);
         this.decodeSkinData(packet);
 
-        this.cachedLoginPacket = packet;
+        ByteBuf buf = this.protocolGroup.getCodec().tryEncode(packet);
+        this.cachedLoginPacket = new byte[buf.readableBytes()];
+        buf.readBytes(this.cachedLoginPacket);
+
         this.createPlayer(this.session);
         return true;
     }

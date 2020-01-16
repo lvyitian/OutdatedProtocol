@@ -6,6 +6,7 @@ import org.itxtech.nemisys.Player;
 import org.itxtech.nemisys.Server;
 import org.itxtech.nemisys.network.SourceInterface;
 import org.itxtech.nemisys.network.protocol.mcpe.DataPacket;
+import org.itxtech.nemisys.network.protocol.mcpe.GenericPacket;
 import xyz.xbeeegsone.outdatedprotocol.network.NetworkPacketFactory;
 
 public class MVInterfaz implements SourceInterface {
@@ -30,10 +31,13 @@ public class MVInterfaz implements SourceInterface {
     @Override
     public Integer putPacket(Player player, DataPacket dataPacket, boolean b, boolean b1) {
         BedrockPacket packet = this.factory.translate(dataPacket);
+        if(dataPacket instanceof GenericPacket) {
+            return 0;
+        }
         if(packet != null) {
             this.session.sendPacket(packet);
         } else {
-            Server.getInstance().getLogger().alert("unknown packet with pid <" + dataPacket.pid() + ">");
+            Server.getInstance().getLogger().alert("unknown translate for packet class <" + dataPacket.getClass().getName() + ">");
         }
         return 0;
     }
