@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.itxtech.nemisys:nemisys:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/itxtech/nemisys/nemisys/1.0-SNAPSHOT/nemisys-1.0-20191214.114434-52.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/itxtech/nemisys/nemisys/1.0-SNAPSHOT/nemisys-1.0-20191214.114434-52-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/itxtech/nemisys/nemisys/1.0-SNAPSHOT/nemisys-1.0-20191214.114434-52-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: cn.nukkit:nukkit-natives:1.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/nukkit/nukkit-natives/1.0.1-SNAPSHOT/nukkit-natives-1.0.1-20180920.171436-3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/nukkit/nukkit-natives/1.0.1-SNAPSHOT/nukkit-natives-1.0.1-20180920.171436-3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/nukkit/nukkit-natives/1.0.1-SNAPSHOT/nukkit-natives-1.0.1-20180920.171436-3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

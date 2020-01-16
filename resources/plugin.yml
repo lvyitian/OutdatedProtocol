@@ -1,0 +1,6 @@
+name: OutdatedProtocol
+main: xyz.xbeeegsone.outdatedprotocol.OutdatedProtocol
+version: "2.0.0"
+api: ["1.0.0"]
+author: xBeeegsone
+description: Outdated protocol support

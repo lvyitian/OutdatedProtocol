@@ -1,8 +1,0 @@
-name: MyPlugin
-main: xyz.xbeeegsone.outdatedprotocol.NukkitPlugin
-version: "1.0.0"
-api: ["1.0.0"]
-
-author: xBeeegsone
-description: Adding support of 1.1.x protocol on 1.7+ Nemisys->Nukkit servers connected via Synapse
-website: https://xbeeegsone.xyz
